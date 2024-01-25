@@ -11,7 +11,7 @@ function Manage() {
       <SearchTerm />
       
       <ListBookContainer />
-      {/* stop */}
+      
     </div>
   )
 }
