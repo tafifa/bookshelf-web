@@ -1,8 +1,18 @@
+import ListBookTitle from "./listBookTitle";
+import SearchTerm from "./searchTerm";
+import ListBookContainer from "./listBookContainer";
+
 function Manage() {
   return (
-    <>
-      <p>Ini Manage Page</p>
-    </>
+    <div className="items-center left-[22px] gap-5">
+      
+      <ListBookTitle />
+      
+      <SearchTerm />
+      
+      <ListBookContainer />
+      
+    </div>
   )
 }
 

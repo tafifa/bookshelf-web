@@ -5,9 +5,9 @@ import ProfilePage from "./profile/profilePage";
 export default function MainPage() {
   return (
     <main className="bg-gray-100 bg-opacity-75 p-2" style={{ minHeight: '100vh' }}>
-      <HomePage />
-      {/* <ManagePage /> */}
-      <ProfilePage />
+      {/* <HomePage /> */}
+      <ManagePage />
+      {/* <ProfilePage /> */}
     </main>
   )
 }
