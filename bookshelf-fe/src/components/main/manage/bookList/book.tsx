@@ -3,7 +3,6 @@ interface BookProps {
     title: string;
     author: string;
     year: string;
-    img: string;
     desc: string;
   };
 }
@@ -14,7 +13,7 @@ const Book: React.FC<BookProps> = ({ data }) => {
       <div className='w-[230px] h-[95px] flex flex-col text-left gap-1'>
         <div className='text-base/5 font-semibold text-custom-grey-light'>{data.title}</div>
         <div className='text-xs/3 italic font-semibold text-custom-grey-light '>{`${data.author} (${data.year})`}</div>
-        <img src={data.img} alt={`Cover for ${data.title}`} className='w-full h-auto' />
+        <hr className="border border-custom-grey-light"/>
         <div className='text-xs/3 italic font-semibold text-custom-grey-light '>{data.desc}</div>
       </div>
       <div className='w-[66px] h-[95px] bg-[#d9d9d9]'></div>

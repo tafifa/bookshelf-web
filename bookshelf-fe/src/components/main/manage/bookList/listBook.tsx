@@ -7,24 +7,21 @@ function ListBook() {
       title: 'Book Name',
       author: 'Book Author',
       year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...',
-      img: 'src/assets/border.svg'
+      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
     },
     {
       id: 2,
       title: 'Book Name',
       author: 'Book Author',
       year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...',
-      img: 'src/assets/border.svg'
+      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
     },
     {
       id: 3,
       title: 'Book Name',
       author: 'Book Author',
       year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...',
-      img: 'src/assets/border.svg'
+      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
     }
   ]
 
