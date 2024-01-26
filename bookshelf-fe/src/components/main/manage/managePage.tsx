@@ -1,19 +1,15 @@
-import ListBookTitle from "./listBookTitle";
-import SearchTerm from "./searchTerm";
-import ListBookContainer from "./listBookContainer";
+import PageBar from "./pageBar/pageBar";
+import SearchBar from "./searchBar";
+import ListBook from "./bookList/listBook";
 
-function Manage() {
+function ManagePage() {
   return (
     <div className="items-center left-[22px] gap-5">
-      
-      <ListBookTitle />
-      
-      <SearchTerm />
-      
-      <ListBookContainer />
-      
+      <PageBar />
+      <SearchBar />
+      <ListBook />
     </div>
   )
 }
 
-export default Manage;
+export default ManagePage;
