@@ -26,7 +26,7 @@ function ListBook() {
   ]
 
   return (
-    <div className='flex flex-col w-[346px] h-[433px] bg-white border-custom-grey-light border-[1px] rounded-[10px] gap-2 place-items-center'>
+    <div className='flex flex-col w-full bg-white border-custom-grey-light border-[1px] rounded-[10px] place-items-center pl-3 pr-3'>
       {books.map((book) => (
         <Book key={book.id} data={book}/>
       ))}

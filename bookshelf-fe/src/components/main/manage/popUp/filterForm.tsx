@@ -29,7 +29,7 @@ const FilterForm: React.FC<FilterFormProps> = ({seen, onClose}) => {
 
                 <div className=' gap-2 flex flex-row justify-between ml-2 mb-1 mr-2'>
                     <div className='flex flex-col  w-[130px] h-[60px]'>
-                        <div className='text-xs/4 font-semibold text-[#4C4C4C]'>Book Year</div>
+                        <div className='text-xs/4 font-semibold text-[#4C4C4C]'>Reading Status</div>
                         <div className='w-[130px] h-[30px] rounded-[10px] bg-[#D9D9D9] border-[1px] border-custom-grey-light'>
                             <input className='text-xs ml-2 outline-none bg-transparent' type="text" value={bookYear} onChange={handleBookYearChange}/>
                         </div>
