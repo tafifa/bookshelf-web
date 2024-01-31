@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'custom-grey-light': '#9D9B93',
+        'custom-grey-lighter':'#D9D9D9',
         'custom-grey-bold': '#4C4C4C',
         'custom-yellow': '#FFD154',
         'custom-blue': '#083344',

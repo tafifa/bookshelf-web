@@ -1,12 +1,12 @@
 import PageBar from "./pageBar/pageBar";
-import SearchBar from "./searchBar";
+import ToolKit from "./toolKit/toolKit";
 import ListBook from "./bookList/listBook";
 
 function ManagePage() {
   return (
-    <div className="items-center left-[22px] gap-5">
+    <div className="">
       <PageBar />
-      <SearchBar />
+      <ToolKit /> 
       <ListBook />
     </div>
   )

@@ -1,37 +1,35 @@
-import Book from "./book";
 
-function ListBook() {
-  const books = [
-    {
-      id: 1,
-      title: 'Book Name',
-      author: 'Book Author',
-      year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
-    },
-    {
-      id: 2,
-      title: 'Book Name',
-      author: 'Book Author',
-      year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
-    },
-    {
-      id: 3,
-      title: 'Book Name',
-      author: 'Book Author',
-      year: 'Book Year',
-      desc: 'Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ...'
-    }
-  ]
+import FavoriteBooks from './favoriteBooks'
 
-  return (
-    <div className='flex flex-col w-full bg-white border-custom-grey-light border-[1px] rounded-[10px] place-items-center pl-3 pr-3'>
-      {books.map((book) => (
-        <Book key={book.id} data={book}/>
-      ))}
+export default function ListBook() {
+    const books = [
+        {
+            id:1,
+            title:'Finding Jesus'
+        },
+        {
+            id: 2,
+            title: 'Chopkick Panda'
+        },
+        {
+            id: 2,
+            title: 'Ratatouing'
+        },
+        {
+            id: 2,
+            title: 'FungusBogeyman'
+        }
+    ]
+
+    return (
+        <div className='w-[611px] h-[563px]  ml-11 mt-5'>
+            <div className='text-left font-semibold text-2xl text-custom-grey-bold mb-2'>Favorite Books</div>
+            <div className=' flex flex-row'>
+        {books.map((book) => (
+            <FavoriteBooks key={book.id} data={book}/>
+        ))}
     </div>
+        </div>
+    
   )
 }
-
-export default ListBook;
