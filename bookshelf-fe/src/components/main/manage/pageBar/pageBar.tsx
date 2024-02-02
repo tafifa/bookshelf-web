@@ -12,6 +12,7 @@ function PageBar() {
     <div className="w-full h-[55px] bg-custom-grey-lighter/25  flex items-center ">
       <button onClick={toggleDrawer} className="pl-8 text-xl font-medium text-custom-grey-bold "> {"> Bookshelf"} </button>
     </div>
+    
     <Drawer open={isOpen} onClose={toggleDrawer} direction='left' size={247} >
       <div className='bg-custom-yellow w-full h-full flex flex-col items-center'>
         <div className='w-[180px] h-[186px] flex flex-col items-center mt-16 mb-6 justify-between '>
