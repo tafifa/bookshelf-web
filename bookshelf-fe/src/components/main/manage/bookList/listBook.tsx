@@ -1,4 +1,3 @@
-
 import FavoriteBooks from './favoriteBooks'
 
 export default function ListBook() {

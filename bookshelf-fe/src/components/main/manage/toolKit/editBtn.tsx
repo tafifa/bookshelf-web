@@ -1,4 +1,3 @@
-import React from 'react'
 import { RiPencilFill } from "react-icons/ri";
 
 export default function EditBtn() {

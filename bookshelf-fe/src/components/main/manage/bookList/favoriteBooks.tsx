@@ -1,5 +1,3 @@
-
-
 interface BookProps {
     data: {
       title: string

@@ -1,6 +1,7 @@
 import React from 'react';
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function PageBar() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -10,7 +11,11 @@ function PageBar() {
   return (
     <>
     <div className="w-full h-[55px] bg-custom-grey-lighter/25  flex items-center ">
-      <button onClick={toggleDrawer} className="pl-8 text-xl font-medium text-custom-grey-bold "> {"> Bookshelf"} </button>
+      <div className='pl-8 flex flex-row items-center'>
+        <button><GiHamburgerMenu className='w-[30px] h-[30px] ' onClick={toggleDrawer}/></button>
+      <button className="pl-8 text-xl font-medium text-custom-grey-bold "> {"> Bookshelf"} </button>
+      </div>
+      
     </div>
     
     <Drawer open={isOpen} onClose={toggleDrawer} direction='left' size={247} >

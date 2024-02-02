@@ -1,4 +1,3 @@
-import React from 'react'
 import SearchBar from './searchBar'
 import EditBtn from './editBtn'
 import AddBtn from './addBtn'

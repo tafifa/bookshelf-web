@@ -1,8 +1,6 @@
-// import NavBar from "./navbar/navbar";
-
 function Header() {
   return (
-    <header className="  w-full h-[99px] flex flex-row items-center justify-between ">
+    <header className="bg-custom-yellow  w-full h-[99px] flex flex-row items-center justify-between fixed top-0 z-10 drop-shadow-lg ">
       <div className="font-bold text-4xl ml-7 " >My Book Collection📚</div>
       <div className="flex flex-row items-center gap-10 mr-8">
       <div className="flex flex-row justify-between w-[155px] h-[19px] items-center  ">
@@ -16,7 +14,7 @@ function Header() {
       </div>
       </div>
       
-      {/* <NavBar /> */}
+      
     </header>
   )
 }
