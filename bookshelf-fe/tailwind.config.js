@@ -12,7 +12,8 @@ export default {
         'custom-grey-bold': '#4C4C4C',
         'custom-yellow': '#FFD154',
         'custom-blue': '#083344',
-        'custom-cream': '#F6EBCD'
+        'custom-cream': '#F6EBCD',
+        'custom-brown':'#7B3F00'
       }
     },
   },

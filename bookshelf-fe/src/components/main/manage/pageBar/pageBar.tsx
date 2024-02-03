@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 function PageBar() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [isFloating, setIsFloating] = React.useState(false)
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState)
   }
+  // just some scrolling things to make the pathbar float
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const scrollThreshold = 100
+      setIsFloating(scrollPosition > scrollThreshold)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, [])
+
   return (
     <>
-    <div className="w-full h-[55px] bg-custom-grey-lighter/25  flex items-center ">
+    <div className={`w-full h-[55px] bg-custom-grey-lighter drop-shadow-xl z-10 flex items-center ${
+          isFloating ? 'fixed top-0 left-0 right-0' : ''
+        } `}>
       <div className='pl-8 flex flex-row items-center'>
         <button><GiHamburgerMenu className='w-[30px] h-[30px] ' onClick={toggleDrawer}/></button>
       <button className="pl-8 text-xl font-medium text-custom-grey-bold "> {"> Bookshelf"} </button>
