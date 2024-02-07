@@ -1,13 +1,19 @@
 # bookshelf-web
 
+_in Collaborating with [dwmaf](https://github.com/dwmaf)_
+
 ## How to use project
 ### frontend
-1. install [pnpm](https://pnpm.io/installation)
-2. cd bookshelf-fe
-3. pnpm i
+1. checkout to [frontend branch](https://github.com/tafifa/bookshelf-web/tree/nice-and-rex-branch)
+2. install [pnpm](https://pnpm.io/installation)
+3. cd bookshelf-fe
+4. pnpm i
 
 ### backend
-1. 
+1. checkout to [backend branch](https://github.com/tafifa/bookshelf-web/tree/create-backend-api)
+2. install [pnpm](https://pnpm.io/installation)
+3. cd bookshelf-be
+4. pnpm i
 
 ## Task
 ### frontend
