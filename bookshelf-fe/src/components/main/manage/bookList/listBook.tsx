@@ -1,5 +1,16 @@
 import { useState } from 'react'
 import FavoriteBooks from './favoriteBooks'
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
+
+type Book = {
+    id: number;
+    title: string;
+    description: string;
+    note: string;
+    author:string;
+    year:number
+}
 
 export default function ListBook() {
     const [selectedBook, setSelectedBook] = useState<{
@@ -10,9 +21,14 @@ export default function ListBook() {
         author: string
         year: number
     } | null>(null)
-    const handleBookSelected = (book: {id: number; title: string; description: string; note: string; author:string; year:number}) => {
+    const handleBookSelected = (book: Book) => {
         setSelectedBook(book)
+        setIsOpen((prevState) => !prevState)
     }
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleDrawer = () => {
+        setIsOpen((prevState) => !prevState)
+      }
     const books = [
         {
             id:1,
@@ -59,9 +75,10 @@ export default function ListBook() {
                 ))}
                 </div>
         </div>
-
+        
+        <Drawer open={isOpen} onClose={toggleDrawer} direction='right' size={599} className='overflow-y-auto rounded-l-xl' >
         {selectedBook && (
-            <div className='w-[599px] h-[776px] rounded-l-lg bg-[#7B3F00] flex items-center justify-end mt-11 '>
+            <div className='w-[599px] h-[776px] rounded-l-lg bg-[#7B3F00] flex items-center justify-end overflow-y-auto '>
                 <div className='w-[525px] h-[737px] bg-white rounded-l-lg flex flex-col '>
                     <div className='w-[437px] h-[200px] flex flex-row justify-between mt-11 ml-6'>
                         <div className='flex flex-col text-left gap-3'>
@@ -87,6 +104,8 @@ export default function ListBook() {
                 </div>
             </div>
         )}
+        </Drawer>
+        
         </div>
         
     

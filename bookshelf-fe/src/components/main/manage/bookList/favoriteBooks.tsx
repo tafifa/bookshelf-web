@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 interface BookProps {
     data: {
       id: number,

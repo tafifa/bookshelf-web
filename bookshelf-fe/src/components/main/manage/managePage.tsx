@@ -5,7 +5,7 @@ import ListBook from "./bookList/listBook";
 function ManagePage() {
   return (
     <div className="">
-      <PageBar />
+      {/* <PageBar /> */}
       <ToolKit /> 
       <ListBook />
     </div>
