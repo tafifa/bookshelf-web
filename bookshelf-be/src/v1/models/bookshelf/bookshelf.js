@@ -1,5 +1,5 @@
 const DB = require("./books.json");
-const { saveToDatabase } = require("./utils");
+const { saveToDatabase } = require("../../utilities/bookshelf");
 
 const getAllBooks = () => {
   return DB.books;
@@ -34,6 +34,7 @@ const updateBook = (changes, bookId) => {
     console.log("Book isn't exists");
     return null; // or throw new Error("Book already exists");
   };
+  
   const updatedBook = {
     ...DB.books[bookIndex],
     ...changes,

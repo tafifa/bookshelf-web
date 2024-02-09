@@ -1,6 +1,6 @@
 const { v4: uuid } = require("uuid");
 
-const bookshelf = require("../database/bookshelf");
+const bookshelf = require("../models/bookshelf/bookshelf");
 
 const getAllBooksService = () => {
   const allBooks = bookshelf.getAllBooks();
@@ -12,7 +12,15 @@ const getBookByIdService = (bookId) => {
   return book;
 };
 
-const postBookService = (newBook) => {
+const postBookService = (body) => {
+  const newBook = {
+    title: body.title,
+    author: body.author,
+    genre: body.genre,
+    description: body.description,
+    publishedYear: body.publishedYear,
+  }
+
   const bookToInsert = {
     ...newBook,
     id: uuid(),

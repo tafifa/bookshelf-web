@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "6b24d013-c16e-43e8-b71b-12b4ddd2401d",
+		"name": "Bookshelf API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20128885"
+	},
+	"item": [
+		{
+			"name": "Bookshelf",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "944"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b0-RHa8s8B2yFTJrQO+BaoOQhNc4Aw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:13:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Books found\",\n    \"data\": [\n        {\n            \"title\": \"Laskar Pelangi\",\n            \"author\": \"Andrea Hirata\",\n            \"genre\": [\n                \"Fiction\",\n                \"Drama\"\n            ],\n            \"description\": \"A novel that tells the story of ten children and their two teachers struggling to learn and make their dreams come true against the backdrop of poverty and prejudice in Belitung, Indonesia.\",\n            \"publishedYear\": \"2005\",\n            \"id\": \"32f14257-c128-4239-94ff-864e37292341\",\n            \"createdAt\": \"2024-01-29T09:39:15.854Z\",\n            \"updatedAt\": \"2024-01-29T09:45:34.620Z\"\n        },\n        {\n            \"title\": \"Pride and Prejudice\",\n            \"author\": \"Jane Austen\",\n            \"genre\": [\n                \"Romance\",\n                \"Classic Literature\"\n            ],\n            \"description\": \"A romantic novel set in early 19th-century England, revolving around the themes of love, marriage, and societal expectations, primarily focusing on the spirited Elizabeth Bennet and the proud Mr. Darcy.\",\n            \"publishedYear\": \"1813\",\n            \"id\": \"ae5f14c5-48e2-44f9-8e5b-2ea01fc787c7\",\n            \"createdAt\": \"2024-01-29T09:39:30.985Z\",\n            \"updatedAt\": \"2024-01-29T09:46:18.103Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Book By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/32f14257-c128-4239-94ff-864e37292341",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"32f14257-c128-4239-94ff-864e37292341"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Book By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/32f14257-c128-4239-94ff-864e37292341",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										"32f14257-c128-4239-94ff-864e37292341"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "458"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ca-qbug54vAk+jOCjlCBamfpaeN1Q8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:13:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"data\": {\n        \"title\": \"Laskar Pelangi\",\n        \"author\": \"Andrea Hirata\",\n        \"genre\": [\n            \"Fiction\",\n            \"Drama\"\n        ],\n        \"description\": \"A novel that tells the story of ten children and their two teachers struggling to learn and make their dreams come true against the backdrop of poverty and prejudice in Belitung, Indonesia.\",\n        \"publishedYear\": \"2005\",\n        \"id\": \"32f14257-c128-4239-94ff-864e37292341\",\n        \"createdAt\": \"2024-01-29T09:39:15.854Z\",\n        \"updatedAt\": \"2024-01-29T09:45:34.620Z\"\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/3",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-hbaO6lI7tjTetDypunZcmvQoJis\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:12:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"There is no book\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"title\": \"The Hobbit\",\r\n      \"author\": \"J.R.R. Tolkien\",\r\n      \"genre\": [\"Fantasy\", \"Adventure\"],\r\n      \"description\": \"A classic fantasy novel about the adventures of Bilbo Baggins, a hobbit who embarks on a quest to reclaim the Lonely Mountain and its treasure from the dragon Smaug.\",\r\n      \"publishedYear\": \"1937\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"title\": \"The Hobbit\",\r\n      \"author\": \"J.R.R. Tolkien\",\r\n      \"genre\": [\"Fantasy\", \"Adventure\"],\r\n      \"description\": \"A classic fantasy novel about the adventures of Bilbo Baggins, a hobbit who embarks on a quest to reclaim the Lonely Mountain and its treasure from the dragon Smaug.\",\r\n      \"publishedYear\": \"1937\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-KP9G2jZEljy/nL+5+0qZzi4EHTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:15:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Status\",\n    \"message\": \"Book has been Created\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-hbaO6lI7tjTetDypunZcmvQoJis\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:18:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"There is no book\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genre\": [\r\n        \"Fiction\",\r\n        \"Drama\",\r\n        \"Friendship\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/32f14257-c128-4239-94ff-864e37292341",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"32f14257-c128-4239-94ff-864e37292341"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Book",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"genre\": [\r\n        \"Fiction\",\r\n        \"Drama\",\r\n        \"Friendship\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/32f14257-c128-4239-94ff-864e37292341",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										"32f14257-c128-4239-94ff-864e37292341"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-7/Pzr94Y/9F9BqF9mHntsRxCRNc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:20:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Book has been updated\"\n}"
+						},
+						{
+							"name": "Error Body",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/32f14257-c128-4239-94ff-864e37292341",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										"32f14257-c128-4239-94ff-864e37292341"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-9G9vX4TUZldOj/zNeI/mtEnG2Cw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:21:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"There is no changes given\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/17525556-2cd5-4078-8796-5585c6989690",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"17525556-2cd5-4078-8796-5585c6989690"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Book",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/v1/bookshelf/17525556-2cd5-4078-8796-5585c6989690",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bookshelf",
+										"17525556-2cd5-4078-8796-5585c6989690"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-qjc3G5+uB97qb2WF8myUEoZKUnk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Feb 2024 21:23:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Book has been deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"title\": \"The Hobbit\",\r\n      \"author\": \"J.R.R. Tolkien\",\r\n      \"genre\": [\"Fantasy\", \"Adventure\"],\r\n      \"description\": \"A classic fantasy novel about the adventures of Bilbo Baggins, a hobbit who embarks on a quest to reclaim the Lonely Mountain and its treasure from the dragon Smaug.\",\r\n      \"publishedYear\": \"1937\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pride and Prejudice\",\r\n    \"author\": \"Jane Austen\",\r\n    \"genre\": [\"Romance\", \"Classic Literature\"],\r\n    \"description\": \"A romantic novel set in early 19th-century England, revolving around the themes of love, marriage, and societal expectations, primarily focusing on the spirited Elizabeth Bennet and the proud Mr. Darcy.\",\r\n    \"publishedYear\": \"1813\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/ae5f14c5-48e2-44f9-8e5b-2ea01fc787c7",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"ae5f14c5-48e2-44f9-8e5b-2ea01fc787c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/v1/bookshelf/587eda86-466e-4674-bba7-83b86c2d960c",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bookshelf",
+								"587eda86-466e-4674-bba7-83b86c2d960c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}

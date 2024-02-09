@@ -7,7 +7,7 @@ const {
   postBookController,
   updateBookController,
   deleteBookController
-} = require("../../controllers/BookshelfController");
+} = require("../controllers/BookshelfController");
 
 router.get("/", getAllBooksController);
 router.get("/:bookId", getBookByIdController);

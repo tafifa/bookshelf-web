@@ -8,7 +8,7 @@ const {
 
 const getAllBooksController = (req, res) => {
   const allBooks = getAllBooksService();
-  res.status(201).send({ status: "OK", data: allBooks });
+  res.status(201).send({ status: "Success", message:"Books found", data: allBooks });
 };
 
 const getBookByIdController = (req, res) => {
@@ -21,26 +21,23 @@ const getBookByIdController = (req, res) => {
   }
 
   const book = getBookByIdService(bookId);
-  res.status(201).send({ status: "OK", data: book });
+
+  if (book === null) {
+    return res.status(404).send({status: "Error", message:"There is no book"});
+  }
+
+  res.status(201).send({ status: "Success", data: book });
 };
 
 const postBookController = (req, res) => {
   const { body } = req;
 
   if (Object.keys(req.body).length === 0) {
-    return res.status(400).send("There is no book");
+    return res.status(400).send({status: "Error", message:"There is no book"});
   }
 
-  const newBook = {
-    title: body.title,
-    author: body.author,
-    genre: body.genre,
-    description: body.description,
-    publishedYear: body.publishedYear,
-  }
-
-  postBookService(newBook);
-  res.status(201).send({status: "OK", message:"Book has been Created"});
+  postBookService(body);
+  res.status(201).send({status: "Success", message:"Book has been Created"});
 };
 
 const updateBookController = (req, res) => {
@@ -50,14 +47,14 @@ const updateBookController = (req, res) => {
   } = req;
 
   if (Object.keys(req.body).length === 0) {
-    return res.status(400).send("There is no book");
+    return res.status(400).send({status: "Error", message:"There is no changes given"});
   }
   if (!bookId) {
-    return res.status(400).send("There is no Id given");
+    return res.status(400).send({status: "Error", message:"There is no id given"});
   }
 
   updateBookService(body, bookId);
-  res.status(201).send({status: "OK", message: "Book has been updated"});
+  res.status(201).send({status: "Success", message: "Book has been updated"});
 };
 
 const deleteBookController = (req, res) => {
@@ -66,11 +63,11 @@ const deleteBookController = (req, res) => {
   } = req;
 
   if (!bookId) {
-    return res.status(400).send("There is no Id given");
+    return res.status(400).send({status: "Error", message:"There is no id given"});
   }
 
   deleteBookService(bookId);
-  res.status(201).send({status: "OK", message: "Book has been deleted"});
+  res.status(201).send({status: "Success", message: "Book has been deleted"});
 };
 
 module.exports = {

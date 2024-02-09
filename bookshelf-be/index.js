@@ -1,14 +1,20 @@
-// In src/index.js 
+// packages
 const express = require("express"); 
 const bodyParser = require("body-parser");
 
-const v1BookshelfRouter = require("./v1/routes/BookshelfRoutes");
+// import routes
+const BookshelfRouter = require("./src/v1/routes/BookshelfRoutes");
+const UserRouter = require("./src/v1/routes/UserRoutes");
 
 const app = express(); 
 const PORT = process.env.PORT || 3000; 
 
+// middleware
 app.use(bodyParser.json());
-app.use("/api/v1/bookshelf", v1BookshelfRouter);
+
+// routes
+app.use("/api/v1/bookshelf", BookshelfRouter);
+app.use("/api/v1/user", UserRouter);
 
 app.listen(PORT, () => { 
     console.log(`API is listening on http://localhost:${PORT}`); 

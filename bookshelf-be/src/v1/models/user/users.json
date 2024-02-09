@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "12345678-90ab-cdef-1234-567890abcdef",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "books": [
+        "32f14257-c128-4239-94ff-864e37292341",
+        "ae5f14c5-48e2-44f9-8e5b-2ea01fc787c7",
+        "6cd75edd-a3b8-4282-8528-8751b7bd19c2"
+      ]
+    },
+    {
+      "id": "87654321-bac0-fedc-4321-0987654321fed",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "abc123",
+      "books": [
+        "ae5f14c5-48e2-44f9-8e5b-2ea01fc787c7",
+        "6cd75edd-a3b8-4282-8528-8751b7bd19c2"
+      ]
+    },
+    {
+      "id": "abcdef12-3456-7890-ef12-34567890ef12",
+      "name": "Alice Johnson",
+      "email": "alicejohnson@example.com",
+      "password": "password456",
+      "books": [
+        "32f14257-c128-4239-94ff-864e37292341",
+        "6cd75edd-a3b8-4282-8528-8751b7bd19c2"
+      ]
+    }
+  ]
+}
