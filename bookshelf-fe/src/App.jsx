@@ -5,10 +5,9 @@ import PageBar from './components/main/manage/pageBar/pageBar';
 import AddPage from './components/main/addpage/addPage';
 import { Route, Routes } from 'react-router-dom'
 import './App.css';
-import { useState } from 'react';
 
 export default function App() {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  
 
   return (
     <>
@@ -19,8 +18,6 @@ export default function App() {
             <Route path="/" Component={MainPage} />
             
       </Routes>
-
-      {/* {isOpen && <MainPage />} */}
       <Footer />
     </>
   )

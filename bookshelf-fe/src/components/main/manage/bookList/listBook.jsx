@@ -3,25 +3,10 @@ import FavoriteBooks from './favoriteBooks'
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 
-type Book = {
-    id: number;
-    title: string;
-    description: string;
-    note: string;
-    author:string;
-    year:number
-}
 
 export default function ListBook() {
-    const [selectedBook, setSelectedBook] = useState<{
-        id: number
-        title: string
-        description: string
-        note: string
-        author: string
-        year: number
-    } | null>(null)
-    const handleBookSelected = (book: Book) => {
+    const [selectedBook, setSelectedBook] = useState(null)
+    const handleBookSelected = (book) => {
         setSelectedBook(book)
         setIsOpen((prevState) => !prevState)
     }
@@ -68,7 +53,7 @@ export default function ListBook() {
     return (
         <div className='flex flex-row w-full justify-between'>
             <div className='w-[611px] h-[563px]  ml-11 mt-5'>
-            <div className='text-left font-semibold text-2xl text-custom-grey-bold mb-2'>Favorite Books</div>
+            <h2 className='text-left font-semibold text-2xl text-custom-grey-bold mb-2'>Favorite Books</h2>
                 <div className=' flex flex-row'>
                 {books.map((book) => (
                 <FavoriteBooks key={book.id} data={book} onSelect={handleBookSelected} />
@@ -82,20 +67,20 @@ export default function ListBook() {
                 <div className='w-[525px] h-[737px] bg-white rounded-l-lg flex flex-col '>
                     <div className='w-[437px] h-[200px] flex flex-row justify-between mt-11 ml-6'>
                         <div className='flex flex-col text-left gap-3'>
-                            <div className='text-custom-grey-bold font-bold text-[40px]/10'>{selectedBook.title} </div>
-                            <div className='text-custom-grey-bold '> <em>{selectedBook.author} ({selectedBook.year})</em> </div>
+                            <h1 className='text-custom-grey-bold font-bold text-[40px]/10'>{selectedBook.title} </h1>
+                            <h4 className='text-custom-grey-bold '> <em>{selectedBook.author} ({selectedBook.year})</em> </h4>
                         </div>
                         <div className='w-[150px] h-[200px] bg-custom-grey-lighter '></div>
                     </div>
                     
                     <div className='w-[437px]  text-left mt-3 ml-6'>
-                        <div className='font-semibold text-custom-grey-bold'>Decription</div>
-                        <div className='text-xs'> <em> {selectedBook.description}</em> </div>
+                        <h4 className='font-semibold text-custom-grey-bold'>Description</h4>
+                        <h5 className='text-xs'> <em> {selectedBook.description}</em> </h5>
                     </div>
                     
                     <div className='w-[437px] text-left mt-6 ml-6'>
-                        <div className='font-semibold text-custom-grey-bold'>Your Notes</div>
-                        <div className='text-xs'><em> {selectedBook.note}</em> </div>
+                        <h4 className='font-semibold text-custom-grey-bold'>Your Notes</h4>
+                        <h5 className='text-xs'><em> {selectedBook.note}</em> </h5>
                     </div>
                     <div className='w-[224px] h-[34px] flex flex-row justify-between place-self-end mt-36 mr-7 '>
                         <button className='w-[101px] h-full bg-custom-grey-light rounded text-white font-semibold text-xs '>Delete</button>
