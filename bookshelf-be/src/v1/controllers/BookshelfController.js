@@ -32,7 +32,7 @@ const getBookByIdController = (req, res) => {
 const postBookController = (req, res) => {
   const { body } = req;
 
-  if (Object.keys(req.body).length === 0) {
+  if (Object.keys(body).length === 0) {
     return res.status(400).send({status: "Error", message:"There is no book"});
   }
 

@@ -1,6 +1,6 @@
 const { v4: uuid } = require("uuid");
 
-const bookshelf = require("../models/bookshelf/bookshelf");
+const bookshelf = require("../utilities/bookshelf");
 
 const getAllBooksService = () => {
   const allBooks = bookshelf.getAllBooks();

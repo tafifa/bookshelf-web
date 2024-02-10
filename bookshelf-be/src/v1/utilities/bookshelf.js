@@ -1,9 +1,68 @@
-const fs = require("fs");
+const DB = require("../models/db.json");
+const { saveToDatabase } = require("../models/db.js");
 
-const saveToDatabase = (DB) => {
-  fs.writeFileSync("./src/v1/models/bookshelf/books.json", JSON.stringify(DB, null, 2), {
-    encoding: "utf-8",
-  });
+const getAllBooks = () => {
+  return DB.books;
 };
 
-module.exports = { saveToDatabase };
+const getBookById = (bookId) => {
+  const book = DB.books.find((book) => book.id === bookId);
+  if (!book) {
+    return null;
+  }
+  return book;
+};
+
+const postBook = (newBook) => {
+  const bookIndex = DB.books.findIndex((book) => book.title === newBook.title) > -1;
+
+  if (bookIndex) {
+    console.log("Book already exists");
+    return null; // or throw new Error("Book already exists");
+  }
+
+  // If the book doesn't exist, add it to the database
+  DB.books.push(newBook);
+  console.log(DB)
+  saveToDatabase(DB);
+  return newBook;
+};
+
+const updateBook = (changes, bookId) => {
+  const bookIndex = DB.books.findIndex((book) => book.id === bookId);
+
+  if (bookIndex === -1) {
+    console.log("Book isn't exists");
+    return null; // or throw new Error("Book already exists");
+  };
+  
+  const updatedBook = {
+    ...DB.books[bookIndex],
+    ...changes,
+    updatedAt: new Date().toISOString()
+  };
+  DB.books[bookIndex] = updatedBook;
+  saveToDatabase(DB);
+}
+
+const deleteBook = (bookId) => {
+  const bookIndex = DB.books.findIndex((book) => book.id === bookId);
+
+  console.log(bookIndex)
+
+  if (bookIndex === -1) {
+    console.log("Book isn't exists");
+    return null; // or throw new Error("Book already exists");
+  };
+
+  DB.books.splice(bookIndex, 1);
+  saveToDatabase(DB);
+}
+
+module.exports = { 
+  getAllBooks,
+  getBookById,
+  postBook,
+  updateBook,
+  deleteBook
+};

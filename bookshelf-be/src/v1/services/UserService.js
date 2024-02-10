@@ -1,6 +1,6 @@
 const { v4: uuid } = require("uuid");
 
-const users = require("../models/user/user");
+const users = require("../utilities/user");
 
 const getAllUsersService = () => {
   const allUsers = users.getAllUsers();
@@ -14,11 +14,10 @@ const getUserByIdService = (userId) => {
 
 const postUserService = (body) => {
   const newUser = {
-    title: body.title,
-    author: body.author,
-    genre: body.genre,
-    description: body.description,
-    publishedYear: body.publishedYear,
+    name: body.name,
+    email: body.email,
+    password: body.password,
+    books: body.books,
   }
 
   const userToInsert = {

@@ -13,14 +13,14 @@ const getAllUsersController = (req, res) => {
 
 const getUserByIdController = (req, res) => {
   const {
-    params: { UserId }
+    params: { userId }
   } = req;
 
-  if (!UserId) {
+  if (!userId) {
     return res.status(400).send("There is no Id given");
   }
 
-  const User = getUserByIdService(UserId);
+  const User = getUserByIdService(userId);
 
   if (User === null) {
     return res.status(404).send({status: "Error", message:"There is no User"});
@@ -32,8 +32,8 @@ const getUserByIdController = (req, res) => {
 const postUserController = (req, res) => {
   const { body } = req;
 
-  if (Object.keys(req.body).length === 0) {
-    return res.status(400).send({status: "Error", message:"There is no User"});
+  if (Object.keys(body).length === 0) {
+    return res.status(400).send({status: "Error", message:"There is no User Data given"});
   }
 
   postUserService(body);
@@ -43,30 +43,30 @@ const postUserController = (req, res) => {
 const updateUserController = (req, res) => {
   const { 
     body,
-    params: { UserId }
+    params: { userId }
   } = req;
 
   if (Object.keys(req.body).length === 0) {
     return res.status(400).send({status: "Error", message:"There is no changes given"});
   }
-  if (!UserId) {
+  if (!userId) {
     return res.status(400).send({status: "Error", message:"There is no id given"});
   }
 
-  updateUserService(body, UserId);
+  updateUserService(body, userId);
   res.status(201).send({status: "Success", message: "User has been updated"});
 };
 
 const deleteUserController = (req, res) => {
   const {
-    params: { UserId }
+    params: { userId }
   } = req;
 
-  if (!UserId) {
+  if (!userId) {
     return res.status(400).send({status: "Error", message:"There is no id given"});
   }
 
-  deleteUserService(UserId);
+  deleteUserService(userId);
   res.status(201).send({status: "Success", message: "User has been deleted"});
 };
 
