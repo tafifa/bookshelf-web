@@ -1,20 +1,17 @@
+import Avatar from "react-avatar";
+
 function Header() {
   return (
-    <header className="bg-custom-yellow  w-full h-[99px] flex flex-row items-center justify-between  ">
-      <h1 className="font-bold text-4xl ml-7 " >My Book Collection📚</h1>
+    <header className="bg-custom-yellow flex flex-row items-center justify-between">
+      <h1 className="font-bold text-4xl ml-7" >My Book Collection📚</h1>
       <div className="flex flex-row items-center gap-10 mr-8">
-      <div className="flex flex-row justify-between w-[155px] h-[19px] items-center  ">
-        <h4 className=" font-semibold ">Home</h4>
-        <h4 className="font-semibold"><u>Bookshelf</u></h4>
+        <a className=" font-semibold" href="/home">Home</a>
+        <a className="font-semibold" href="/bookshelf"><u>Bookshelf</u></a>
+        <div className="border-l-2 mt-3 mb-3 pl-5 border-custom-grey-bolder flex flex-row items-center gap-3 justify-between">
+          <a className="font-semibold" href="profile">Welcome, Anonymous!</a>
+          <Avatar size="70" round={true} name="Anonymous"/>
+        </div>
       </div>
-      <div className="border-1-2 bg-black h-10 w-[1px] "></div>
-      <div className="w-[261px] h-[71px] flex flex-row items-center gap-2 justify-between ">
-        <h4 className="font-semibold">Welcome, Anonymous!</h4>
-        <div className="w-[70px] h-[70px] rounded-full bg-slate-400 "></div>
-      </div>
-      </div>
-      
-      
     </header>
   )
 }

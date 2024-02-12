@@ -4,16 +4,13 @@ import AddBtn from './addBtn'
 
 export default function ToolKit() {
   return (
-    <div className='flex justify-end gap-52 mr-20'>
-      <div className='flex justify-end gap-52 mt-10'>
+    <div className='flex justify-between pt-10 px-10'>
+      <h2 className='text-left font-semibold text-3xl text-custom-grey-bold '>List Book</h2>
       <SearchBar />
-        <div className='flex gap-3'>
+      <div className='flex gap-2'>
         <EditBtn />
         <AddBtn />
-        </div>
       </div>
-        
-        
     </div>
   )
 }
