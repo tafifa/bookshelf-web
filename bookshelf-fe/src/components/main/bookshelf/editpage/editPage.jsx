@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
 
 
-export default function AddPage() {
+export default function EditPage() {
   const initialbookstate = {
     title: "",
     author: "",
