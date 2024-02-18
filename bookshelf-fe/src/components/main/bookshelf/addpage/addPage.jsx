@@ -4,7 +4,7 @@ import { RxCross1 } from "react-icons/rx"
 import Rating from '@mui/material/Rating'
 import StarIcon from '@mui/icons-material/Star'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
-
+import postBook from "../../../../api/book/bookshelf.cjs"
 
 export default function AddPage() {
   const initialbookstate = {
@@ -45,13 +45,11 @@ export default function AddPage() {
     var data = {
       title: book.title,
       author: book.author,
-      year: book.year,
+      publishedYear: book.year,
       description: book.description,
-      notes: book.notes,
-      tags: tags,
-      rating: stars
+      genre: tags
     }
-    console.log(data)
+    postBook(data)
   }
 
     return (
