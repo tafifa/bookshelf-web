@@ -8,7 +8,7 @@ export default function Bookshelf() {
   return (
     <>
       <ToolKit onSearchResults={setSearchResults}/>
-      <ListBook />
+      <ListBook searchResults={searchResults}/>
     </>
   )
 }

@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
 import axios from 'axios'
+import bookUtilities from "../../../../api/book/bookshelf";
 
 export default function SearchBar({ onSearch }) {
-  const apikey = 'yourapikey'
+  
   const [query, setQuery] = useState('')
-  const handleSearch = async () => {
-    try{
-      const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apikey}`
-      )
-      onSearch(response.data.items)
-    }catch (error){
-      console.error('error fetching data')
+  const handleSearch = () => {
+    const foundBook = bookUtilities.getBookByTittle(query); 
+    
+    if (foundBook) {
+      onSearch(foundBook);
+    } else {
+      console.log(`${query} not found`);
     }
-  }
+  };
   return (
     <div className='bg-white border-custom-grey-light border rounded-xl flex items-center '>
         <input className='px-48 outline-none text-center text-base font-semibold text-custom-grey-light ' type="text" placeholder='Search your book here...' value={query} onChange={(e) => setQuery(e.target.value)} />
