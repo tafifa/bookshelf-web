@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
-import axios from 'axios'
 import bookUtilities from "../../../../api/book/bookshelf";
 
 export default function SearchBar({ onSearch }) {
