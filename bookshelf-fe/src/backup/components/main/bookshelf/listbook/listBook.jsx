@@ -43,7 +43,7 @@ const books = [
 ];
 
 export default function ListBook(searchResult) {
-  console.log(searchResult)
+  console.log(searchResult);
   const [selectedBook, setSelectedBook] = useState(null);
   const handleBookSelected = (book) => {
     setSelectedBook(book);

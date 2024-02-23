@@ -1,8 +1,17 @@
+import Header from "../components/header";
+import PathBar from "../components/pathBar";
+import Footer from "../components/footer";
+
 function Home() {
   return (
-    <div>
-      <p>Hello, World! This is Home</p>
-    </div>
+    <>
+      <Header />
+      <PathBar />
+      <div>
+        <p>Hello, World! This is Home</p>
+      </div>
+      <Footer />
+    </>
   )
 }
 

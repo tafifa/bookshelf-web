@@ -1,6 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
+import Header from "../components/header";
+import PathBar from "../components/pathBar";
+import Footer from "../components/footer";
 import View from "./collection/view";
+import SearchBar from "../components/button/searchBar";
+import AddBtn from "../components/button/addBtn";
+import EditBtn from "../components/button/editBtn";
 
 const books = [
   {
@@ -41,39 +48,53 @@ const books = [
   },
 ];
 
+function LinkTag({ book }) {
+  return <a href={"colllection/view/" + book.id}>{book.title}</a>;
+}
+
 function Collection() {
-  const [selectedBook, setSelectedBook] = useState(null);
-  const handleBookSelected = (book) => {
-    setSelectedBook(book);
-    setIsOpen((prevState) => !prevState);
-  };
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  // const [selectedBook, setSelectedBook] = useState(null);
+  // const handleBookSelected = (book) => {
+  //   setSelectedBook(book);
+  //   setIsOpen((prevState) => !prevState);
+  // };
 
   return (
-    <div className="flex flex-row w-full justify-between bg-white min-h-screen ">
-      <div className="w-[611px] h-[563px]  ml-11 mt-5">
-        <h2 className="text-left font-semibold text-2xl text-custom-grey-bold mb-2">
-          Favorite Books
-        </h2>
+    <>
+      <Header />
+      <PathBar />
+      <div className="bg-white min-h-screen p-7">
+        <div className="flex justify-between mb-7">
+          <h2 className="text-left text-white font-semibold text-3xl text-custom-grey-bold py-1">
+            Favorite Books
+          </h2>
+          <SearchBar />
+          <div className="flex gap-2">
+            {/* <EditBtn /> */}
+            <AddBtn />
+          </div>
+        </div>
 
-        <div className=" flex flex-row">
+        <div className="flex flex-row gap-7">
           {books.map((book) => (
-            <div key={book.id} onClick={() => handleBookSelected(book)} className='w-full h-[268] hover:cursor-pointer '>
-                <div className="w-[131px] h-[225px] flex flex-col justify-between ">
-                    <div className="w-full h-[200px] bg-custom-grey-lighter rounded-xl drop-shadow-lg"></div>
-                    <h4 className="font-semibold text-base text-black ">{book.title}</h4>
-                </div>
-            </div>
+            <Link
+              key={book.id}
+              to={`/collection/view/${book.id}`} // Assuming the route path is '/books/:id'
+              className="hover:cursor-pointer"
+            >
+              <div className="flex flex-col justify-between hover:cursor-pointer">
+                <div className="w-[150px] h-[210px] bg-custom-grey-lighter rounded-xl drop-shadow-lg mb-2"></div>
+                <p className="font-semibold text-base text-black ">
+                  {book.title}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
-
-      {selectedBook && ( <View book={selectedBook}/>)}
-
-    </div>
+      <Footer />
+    </>
+    
   );
 }
 
